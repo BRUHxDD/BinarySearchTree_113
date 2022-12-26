@@ -14,6 +14,12 @@ namespace BinarySearchTree
 
         //constructor for the node class
 
+        public node(string i, node l, node r)
+        {
+            info = i; 
+            lchild = l;
+            rchild = r;
+        }
     }
     internal class Program
     {
