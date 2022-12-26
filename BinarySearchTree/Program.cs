@@ -79,7 +79,7 @@ namespace BinarySearchTree
             if (ptr != null)
             {
                 inorder(ptr.lchild);
-                Console.WriteLine(ptr.info + "");
+                Console.WriteLine(ptr.info + " ");
                 inorder(ptr.rchild);
             }
         }
@@ -92,7 +92,7 @@ namespace BinarySearchTree
             }
             if (ptr != null)
             {
-                Console.WriteLine(ptr.info + "");
+                Console.WriteLine(ptr.info + " ");
                 preorder(ptr.lchild);
                 preorder(ptr.rchild);
             }
@@ -108,7 +108,7 @@ namespace BinarySearchTree
             {
                 postorder(ptr.lchild);
                 postorder(ptr.rchild);
-                Console.Write(ptr.info + "");
+                Console.Write(ptr.info + " ");
             }
         }
 
@@ -150,6 +150,13 @@ namespace BinarySearchTree
                             x.postorder(x.ROOT);
                         }
                         break;
+                    case '5':
+                        return;
+                    default:
+                        {
+                            Console.WriteLine("Invalid option");
+                            break;
+                        }
                 }
             }
         }
