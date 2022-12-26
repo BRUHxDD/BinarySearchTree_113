@@ -33,7 +33,7 @@ namespace BinarySearchTree
         {
             node tmp, parent = null, currentnode = null;
             find(element, ref parent, ref currentnode);
-            if (currentnode!= null)
+            if (currentnode != null)
             {
                 Console.WriteLine("Duplicate words not allowed");
                 return;
@@ -41,13 +41,13 @@ namespace BinarySearchTree
             else //if the speicified node is not present
             {
                 tmp = new node(element, null, null);
-                if(parent == null)
+                if (parent == null)
                 {
                     ROOT = tmp;
                 }
-                else if (string.Compare(element,parent.info) < 0)
+                else if (string.Compare(element, parent.info) < 0)
                 {
-                    if (string.Compare(element, parent.info) <0)
+                    if (string.Compare(element, parent.info) < 0)
                         parent.lchild = tmp;
                 }
                 else
@@ -71,7 +71,7 @@ namespace BinarySearchTree
         }
         public void inorder(node ptr)
         {
-            if(ROOT == null)
+            if (ROOT == null)
             {
                 Console.WriteLine("Tree is empty");
                 return;
@@ -85,7 +85,7 @@ namespace BinarySearchTree
         }
         public void preorder(node ptr)
         {
-            if(ROOT == null)
+            if (ROOT == null)
             {
                 Console.WriteLine("Tree is empty");
                 return;
@@ -99,23 +99,44 @@ namespace BinarySearchTree
         }
         public void postorder(node ptr)
         {
-            if(ROOT == null)
+            if (ROOT == null)
             {
                 Console.WriteLine("Tree is empty");
                 return;
             }
-            if(ptr != null)
+            if (ptr != null)
             {
                 postorder(ptr.lchild);
                 postorder(ptr.rchild);
                 Console.Write(ptr.info + "");
             }
         }
-    }
-    internal class Program
-    {
+
         static void Main(string[] args)
         {
+            BinaryTree x = new BinaryTree();
+            while (true)
+            {
+                Console.WriteLine("\nMenu");
+                Console.WriteLine("1. Implement insert operation");
+                Console.WriteLine("2. Perform inorder traversal");
+                Console.WriteLine("3. Perform preorder traversal");
+                Console.WriteLine("4. Perform postorder traversal");
+                Console.WriteLine("5. Exit");
+                Console.Write("\nEnter your choice (1-5) :");
+                char ch = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine();
+                switch (ch)
+                {
+                    case '1':
+                        {
+                            Console.WriteLine("enter a word: ");
+                            string word = Console.ReadLine();
+                            x.insert(word);
+                        }
+                        break;
+                }
+            }
         }
     }
 }
